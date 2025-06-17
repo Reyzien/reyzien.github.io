@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Reyzien – Minecraft Developer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="icon" href="images/logo.png" />
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    #wrapper {
+      background: url("images/background.jpeg") no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      box-sizing: border-box;
+    }
+    .container {
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 800px;
+      width: 100%;
+      text-align: center;
+    }
+    .logo img {
+      max-width: 120px;
+      margin-bottom: 20px;
+    }
+    h1 {
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      letter-spacing: 4px;
+    }
+    h3 {
+      margin-top: 30px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    ul li {
+      margin-bottom: 8px;
+    }
+    a {
+      color: #76c7ff;
+      text-decoration: none;
+    }
+    a:hover,
+    a:focus {
+      text-decoration: underline;
+    }
+    /* Projects dropdown */
+    .projects-list {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0;
+      list-style: none;
+      text-align: left;
+    }
+    .projects-list li {
+      margin-bottom: 12px;
+      border-radius: 8px;
+      background: rgba(255 255 255 / 0.1);
+      overflow: hidden;
+      transition: background-color 0.3s ease;
+    }
+    .projects-list li:hover {
+      background: rgba(118 199 255 / 0.15);
+    }
+    .project-toggle {
+      background: none;
+      border: none;
+      color: #76c7ff;
+      font-weight: 700;
+      font-size: 1.05rem;
+      cursor: pointer;
+      width: 100%;
+      text-align: left;
+      padding: 12px 18px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+      outline-offset: 2px;
+      outline-color: transparent;
+      transition: background-color 0.25s ease, outline-color 0.25s ease;
+    }
+    .project-toggle:hover,
+    .project-toggle:focus-visible {
+      background-color: rgba(118, 199, 255, 0.25);
+      outline-color: #76c7ff;
+    }
+    .project-toggle::after {
+      content: "▸";
+      font-weight: 900;
+      transition: transform 0.3s ease;
+    }
+    .project-toggle[aria-expanded="true"]::after {
+      transform: rotate(90deg);
+    }
+    .project-desc {
+      max-height: 0;
+      overflow: hidden;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.9rem;
+      padding: 0 18px;
+      line-height: 1.4;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+      text-align: left;
+    }
+    .project-desc.open {
+      max-height: 200px;
+      padding-top: 10px;
+      padding-bottom: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div id="wrapper">
+    <div class="container">
+      <div class="logo"><img src="images/logo.png" alt="Reyzien Logo" /></div>
+      <h1>Reyzien <b>Services</b></h1>
+      <p>Software development, plugin creation, and Minecraft server solutions.</p>
+
+      <h3>About Me</h3>
+      <p>
+        I'm Reyzien — a Minecraft developer focused on building high-performance<br>
+        plugins for competitive servers.
+      </p>
+
+      <h3>Skills</h3>
+      <ul>
+        <li>🛠 Java, Kotlin, C</li>
+        <li>🗃 MongoDB, MySQL, Redis</li>
+      </ul>
+
+      <h3>Projects</h3>
+      <ul class="projects-list">
+        <li>
+          <button
+            class="project-toggle"
+            aria-expanded="false"
+            aria-controls="proj1-desc"
+            id="proj1-btn"
+          >
+            Bot Practice
+          </button>
+          <div
+            id="proj1-desc"
+            class="project-desc"
+            role="region"
+            aria-labelledby="proj1-btn"
+          >
+            A feature-rich practice plugin where players can fight against bots.<br><br>
+            Version: 1.8<br>
+            Server: play.mistymc.xyz
+            
+          </div>
+        </li>
+        <li>
+          <button
+            class="project-toggle"
+            aria-expanded="false"
+            aria-controls="proj2-desc"
+            id="proj2-btn"
+          >
+            Oxygen
+          </button>
+          <div
+            id="proj2-desc"
+            class="project-desc"
+            role="region"
+            aria-labelledby="proj2-btn"
+          >
+            A feature-rich and optimized SoupPvP/KitPvP core.<br><br>
+            Version: 1.8<br>
+            Server: play.mistymc.xyz
+          </div>
+        </li>
+        <li>
+          <button
+            class="project-toggle"
+            aria-expanded="false"
+            aria-controls="proj3-desc"
+            id="proj3-btn"
+          >
+            Moon
+          </button>
+          <div
+            id="proj3-desc"
+            class="project-desc"
+            role="region"
+            aria-labelledby="proj3-btn"
+          >
+            The ultimate KitPvP core for mordern versions.<br><br>
+            Version: 1.20 - 1.21.5<br>
+            Server: N/A
+          </div>
+        </li>
+        <li>
+          <button
+            class="project-toggle"
+            aria-expanded="false"
+            aria-controls="proj4-desc"
+            id="proj4-btn"
+          >
+            Xenon
+          </button>
+          <div
+            id="proj4-desc"
+            class="project-desc"
+            role="region"
+            aria-labelledby="proj4-btn"
+          >
+            A simple and well-structured Hub core.<br><br>
+            Version: 1.8 - 1.21<br>
+            Server: play.mistymc.xyz
+          </div>
+        </li>
+        <li>
+          <button
+            class="project-toggle"
+            aria-expanded="false"
+            aria-controls="proj5-desc"
+            id="proj5-btn"
+          >
+            BuildFFA
+          </button>
+          <div
+            id="proj5-desc"
+            class="project-desc"
+            role="region"
+            aria-labelledby="proj5-btn"
+          >
+            A simple FFA core where building is allowed.<br><br>
+            Version: 1.8<br>
+            Server: play.mistymc.xyz
+          </div>
+        </li>
+        <li>
+          <button
+            class="project-toggle"
+            aria-expanded="false"
+            aria-controls="proj6-desc"
+            id="proj6-btn"
+          >
+            SoupPvP
+          </button>
+          <div
+            id="proj6-desc"
+            class="project-desc"
+            role="region"
+            aria-labelledby="proj6-btn"
+          >
+            A complete recode of Oxygen but in Kotlin.<br><br>
+            Version: 1.8<br>
+            Server: play.mistymc.xyz
+          </div>
+        </li>
+        <li>
+          <button
+            class="project-toggle"
+            aria-expanded="false"
+            aria-controls="proj7-desc"
+            id="proj7-btn"
+          >
+            Joker
+          </button>
+          <div
+            id="proj7-desc"
+            class="project-desc"
+            role="region"
+            aria-labelledby="proj7-btn"
+          >
+            A simple troll plugin.<br><br>
+            Version: 1.8 - 1.21<br>
+            Server: N/A<br>
+          </div>
+        </li>
+      </ul>
+
+      <h3>Experience</h3>
+      <ul>
+        <li>• Lead Developer @ MistyMC</li>
+        <li>• Developer @ BWHub</li>
+        <li>• Manager & Developer @ AtlasCraft</li>
+        <li>• Jr. Developer @ SurvivalDub</li>
+        <li>• Technician @ LotusMC</li>
+      </ul>
+
+      <h3>Education</h3>
+      <p>University of the Peloponnese – Informatics & Telecommunications</p>
+
+      <h3>Contact</h3>
+      <p><a href="mailto:reyzienbusiness@gmail.com">📧 reyzienbusiness@gmail.com</a></p>
+      <p>
+        <a href="https://github.com/Reyzien" target="_blank"
+          >🐙 github.com/Reyzien</a
+        >
+      </p>
+      <p><a href="https://discord.gg/SSjnkdC5" target="_blank">💬 Discord</a></p>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll(".project-toggle").forEach((button) => {
+      button.addEventListener("click", () => {
+        const expanded = button.getAttribute("aria-expanded") === "true";
+        button.setAttribute("aria-expanded", String(!expanded));
+        const desc = document.getElementById(button.getAttribute("aria-controls"));
+        if (!expanded) {
+          desc.classList.add("open");
+        } else {
+          desc.classList.remove("open");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
