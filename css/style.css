@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700;900&display=swap");
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway", sans-serif;
+  background: #0b0c10;
+  color: #ffffffd0;
+}
+
+#wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 30px 15px;
+}
+
+.card {
+  background: rgba(0,0,0,0.65);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px;
+  padding: 25px;
+  max-width: 800px;
+  width: 100%;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 18px rgba(0,0,0,0.6);
+  animation: fadeIn 0.7s ease;
+}
+
+.logo img {
+  width: 100px;
+  margin: 0 auto 10px;
+  display: block;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  font-weight: 300;
+  letter-spacing: 6px;
+  margin-bottom: 5px;
+}
+
+h1 b {
+  font-weight: 900;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-size: 17px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #76c7ff;
+}
+
+.simple-text {
+  font-size: 14px;
+}
+
+.pill-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-start;
+}
+
+.pill {
+  background: rgba(255,255,255,0.08);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.projects-slider {
+  overflow: hidden;
+  cursor: grab;
+  margin-bottom: 20px;
+}
+
+.projects-track {
+  display: flex;
+  gap: 15px;
+  transition: transform 0.3s ease;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.projects-track::-webkit-scrollbar {
+  display: none;
+}
+
+.projects-track.active {
+  cursor: grabbing;
+}
+
+.project-card {
+  flex: 0 0 250px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.projects-slider, 
+.projects-track, 
+.project-card {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.project-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+}
+
+.list {
+  padding-left: 15px;
+}
+
+.list li {
+  margin-bottom: 4px;
+}
+
+.contact a {
+  color: #76c7ff;
+  font-size: 15px;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
