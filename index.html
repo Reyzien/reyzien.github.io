@@ -10,6 +10,11 @@
 </head>
 
 <body>
+
+  <!-- Seasonal Effects -->
+  <div id="seasonal-effects"></div>
+
+  
   <div id="wrapper">
     <div class="card">
 
@@ -134,7 +139,7 @@
 
     </div>
   </div>
-
+  
   <!-- Slider Script -->
   <script>
     const slider = document.querySelector(".projects-track");
@@ -166,7 +171,30 @@
       const walk = (x - startX) * 1;
       slider.scrollLeft = scrollLeft - walk;
     });
+    
   </script>
 
+  <script>
+    const container = document.getElementById("seasonal-effects");
+
+    const today = new Date();
+    const month = today.getMonth(); // 0 = Jan, 11 = Dec
+    const day = today.getDate();
+
+    if ((month === 11 && day >= 1) || (month === 0 && day <= 5)) {
+        for (let i = 0; i < 25; i++) {
+          const snow = document.createElement("div");
+
+          snow.className = "snowflake";
+          snow.innerText = "❄";
+          snow.style.left = Math.random() * 100 + "vw";
+          snow.style.animationDuration = 5 + Math.random() * 10 + "s";
+          snow.style.fontSize = 10 + Math.random() * 20 + "px";
+          container.appendChild(snow);
+        }
+    }
+
+  </script>
 </body>
+
 </html>
